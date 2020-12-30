@@ -1,12 +1,9 @@
 import {
   ORGANIZATION_FETCH_SUCCEEDED,
-  ORGANIZATION_FETCH_FAILED,
   ORGANIZATION_FETCH_REQUESTED,
   INIT_REQUESTED,
   ZEN_FETCH_SUCCEEDED,
-  ZEN_FETCH_FAILED,
   OCTOCAT_FETCH_SUCCEEDED,
-  OCTOCAT_FETCH_FAILED,
 } from './actions';
 
 const initialState = {
@@ -20,7 +17,7 @@ const initialState = {
 
 export default (
   state = initialState,
-  { type, organizations, zen, octocat, error },
+  { type, organizations, zen, octocat },
 ) => {
   switch (type) {
     case ORGANIZATION_FETCH_REQUESTED:
