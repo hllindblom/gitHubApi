@@ -8,14 +8,11 @@ import { H1, ToolTip } from './styled';
 
 const OrganizationTable = ({ organizations, loading, fetchAllOrganizations }) => {
   useEffect(() => {
-    const testFetch = async () => {
-      console.log(organizations);
-      console.log(typeof fetchAllOrganizations);
-      const a = await fetchAllOrganizations();
-      console.log(a);
+    const fetchOrganizations = async () => {
+      await fetchAllOrganizations();
     };
 
-    testFetch();
+    fetchOrganizations();
 
   }, []);
 

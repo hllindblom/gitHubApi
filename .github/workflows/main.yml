@@ -25,6 +25,7 @@ jobs:
     - run: npm install -g yarn
     - run: |
         yarn install
+        yarn test
         yarn build
     - name: Package app
       uses: actions/upload-artifact@v1
