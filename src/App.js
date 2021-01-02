@@ -8,6 +8,7 @@ import theme from './theme';
 import { Body, Link } from './styled';
 import Home from './components/Home';
 import OrganizationTable from './components/OrganizationTable';
+import ErrorBoundary from './components/ErrorBoundary';
 import reducer from './store/reducers';
 import mySaga from './store/sagas';
 
@@ -30,12 +31,22 @@ const App = () =>
               <Link to="/organizations">organizations</Link>
             </div>
             <Switch>
-              <Route path="/organizations">
-                <OrganizationTable />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
+              <Route
+                path="/organizations"
+                render={() => (
+                  <ErrorBoundary>
+                    <OrganizationTable />
+                  </ErrorBoundary>
+                )}
+              />
+              <Route
+                path="/"
+                render={() => (
+                  <ErrorBoundary>
+                    <Home />
+                  </ErrorBoundary>
+                )}
+              />
             </Switch>
           </Router>
         </Body>

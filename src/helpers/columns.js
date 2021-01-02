@@ -5,24 +5,24 @@ import { Img } from './styled';
 
 export default [
   {
-    id: 'a',
+    id: 'avatar',
     Header: '',
     accessor: 'avatar_url',
     Cell: props => <Img src={props.value} />,
     disableSortBy: true,
   },
   {
-    id: 'b',
+    id: 'id',
     Header: 'Id',
     accessor: 'id',
   },
   {
-    id: 'c',
+    id: 'login',
     Header: 'Login',
     accessor: 'login',
   },
   {
-    id: 'd',
+    id: 'url',
     Header: 'Url',
     accessor: 'url',
   },

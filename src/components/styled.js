@@ -29,7 +29,7 @@ export const SortIcon = styled.span`
 
 export const ZenText = styled.div`
   font-style: italic;
-  color: ${(props) => props.theme.colors.Gray}
+  color: ${(props) => props.theme.colors.gray}
 `;
 
 export const H1 = styled.h1`
@@ -43,4 +43,8 @@ export const ToolTip = styled.div`
 
 export const ZenWrapper = styled.div`
   margin: 1em;
+`;
+
+export const ErrorText = styled(H1)`
+  color: ${(props) => props.theme.colors.red}
 `;

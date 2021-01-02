@@ -6,7 +6,7 @@ import {
   allOrganizationsFetchFailed,
   INIT_REQUESTED,
   receiveZen,
-  zenFetchFailed,
+  initFailed,
   receiveOctocat,
 } from './actions';
 
@@ -15,7 +15,8 @@ function* fetchOrganizationsSaga() {
     const organizationData = yield call(getAllOrganizationsApi);
     yield put(receiveAllOrganizations(organizationData));
   } catch (e) {
-    yield put(allOrganizationsFetchFailed(e.message));
+    yield put(allOrganizationsFetchFailed({ message: 'There was an error when fetching organizations' }));
+    console.log(e);
   }
 }
 
@@ -31,7 +32,8 @@ function* initSaga() {
     yield put(receiveZen(zenText));
     yield put(receiveOctocat(octocatText));
   } catch (e) {
-    yield put(zenFetchFailed(e.message));
+    yield put(initFailed({ message: 'There was an error when initializing the home page' }));
+    console.log(e);
   }
 }
 
