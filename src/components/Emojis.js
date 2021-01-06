@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchEmojis as fetchEmojisAction } from '../store/actions';
 import loadingAnimation from '../assets/loadingAnimation.gif';
 import Error from './Error';
-import { H1, EmojiWrapper, Emoji } from './styled';
+import EmojiForm from './EmojiForm';
+import { H1, H2, EmojiWrapper, Emoji } from './styled';
 
 const Emojis = ({ emojis, loading, error, fetchEmojis }) => {
+  const [numberOfEmojis, setNumberOfEmojis] = useState(30);
+
   useEffect(() => {
     const fetchEmojiData = async () => {
-      await fetchEmojis();
+      await fetchEmojis(numberOfEmojis);
     };
 
     fetchEmojiData();
@@ -21,11 +24,20 @@ const Emojis = ({ emojis, loading, error, fetchEmojis }) => {
     const keys = Object.keys(emojis);
     const randomKeys = [];
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < numberOfEmojis; i++) {
       randomKeys.push(keys[getRandomNumber()]);
     }
 
     return randomKeys.map((key) => emojis[key]);
+  };
+
+  const updateNumber = (newNo) => {
+    if (newNo === '' || newNo === undefined || newNo === null) {
+      setNumberOfEmojis(0);
+      return;
+    }
+
+    setNumberOfEmojis(parseInt(newNo, 10));
   };
 
   return (
@@ -40,7 +52,9 @@ const Emojis = ({ emojis, loading, error, fetchEmojis }) => {
 
       {!loading && !error && (
         <>
-          <H1>30 Random Emojis from GitHub</H1>
+          <H1>Random Emojis from GitHub</H1>
+          <EmojiForm currentNumber={numberOfEmojis} updateNumber={updateNumber} />
+          <H2>{`${numberOfEmojis} emojis:`}</H2>
           <EmojiWrapper>
             {getRandomItems().map((emoji, i) => <Emoji key={i} src={emoji} alt={emoji} data-testid="emoji" />)}
           </EmojiWrapper>

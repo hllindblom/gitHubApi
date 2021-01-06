@@ -15,7 +15,7 @@ describe('OrganizationTable', () => {
       },
     );
 
-    expect(getByText('30 Random Emojis from GitHub')).toBeInTheDocument();
+    expect(getByText('Random Emojis from GitHub')).toBeInTheDocument();
     expect(getAllByTestId('emoji')).toHaveLength(30);
   });
 

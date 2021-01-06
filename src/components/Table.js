@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import PropTypes from 'prop-types';
-import { StyledTable, TableRow, SortIcon, PaginationWrapper, PaginationButton, PaginationInput, PaginationSelect } from './styled';
+import { StyledTable, TableRow, SortIcon, PaginationWrapper, PaginationButton, Input, PaginationSelect } from './styled';
 import columns from '../helpers/columns';
 
 const Table = ({ data, openModal }) => {
@@ -91,7 +91,7 @@ const Table = ({ data, openModal }) => {
         </span>
         <span>
           | Go to page:
-          <PaginationInput
+          <Input
             type="number"
             min="1"
             max={pageCount}

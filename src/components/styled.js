@@ -47,6 +47,10 @@ export const H1 = styled.h1`
   font-weight: 600;
 `;
 
+export const H2 = styled.h2`
+  color: ${(props) => props.theme.colors.darkGray};
+`;
+
 export const ToolTip = styled.div`
   font-style: italic;
 `;
@@ -116,7 +120,7 @@ export const PaginationButton = styled.button`
   text-decoration: none;
 `;
 
-export const PaginationInput = styled.input`
+export const Input = styled.input`
   margin: 0 0.5em;
 `;
 
@@ -128,10 +132,19 @@ export const PaginationSelect = styled.select`
 `;
 
 export const EmojiWrapper = styled.div`
-  width: 40%;
+  width: 50%;
 `;
 
 export const Emoji = styled.img`
   width: 3em;
   margin: 1em;
+`;
+
+export const Submit = styled.input`
+  background-color: ${(props) => props.theme.colors.darkGray};
+  border: none;
+  color: white;
+  padding: 0.4em 1em;
+  text-align: center;
+  text-decoration: none;
 `;

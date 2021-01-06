@@ -32,7 +32,7 @@ const App = () =>
               <div>
                 <Link to="/">home</Link>
                 <Link to="/organizations">organizations</Link>
-                <Link to="/emojis">30 random emojis</Link>
+                <Link to="/emojis">random emojis</Link>
               </div>
               <Switch>
                 <Route
