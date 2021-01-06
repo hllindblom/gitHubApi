@@ -23,6 +23,7 @@ const EmojiForm = ({ currentNumber, updateNumber }) => {
       />
       <Submit
         type="submit"
+        value="OK"
       />
     </form>
   );
