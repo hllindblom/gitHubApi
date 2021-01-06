@@ -4,11 +4,13 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ModalProvider } from 'styled-react-modal';
 import theme from './theme';
 import { Body, Link } from './styled';
 import Home from './components/Home';
-import OrganizationTable from './components/OrganizationTable';
 import ErrorBoundary from './components/ErrorBoundary';
+import Organizations from './components/Organizations';
+import Emojis from './components/Emojis';
 import reducer from './store/reducers';
 import mySaga from './store/sagas';
 
@@ -24,32 +26,43 @@ const App = () =>
   (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Body className="App">
-          <Router>
-            <div>
-              <Link to="/">home</Link>
-              <Link to="/organizations">organizations</Link>
-            </div>
-            <Switch>
-              <Route
-                path="/organizations"
-                render={() => (
-                  <ErrorBoundary>
-                    <OrganizationTable />
-                  </ErrorBoundary>
-                )}
-              />
-              <Route
-                path="/"
-                render={() => (
-                  <ErrorBoundary>
-                    <Home />
-                  </ErrorBoundary>
-                )}
-              />
-            </Switch>
-          </Router>
-        </Body>
+        <ModalProvider>
+          <Body className="App">
+            <Router>
+              <div>
+                <Link to="/">home</Link>
+                <Link to="/organizations">organizations</Link>
+                <Link to="/emojis">30 random emojis</Link>
+              </div>
+              <Switch>
+                <Route
+                  path="/organizations"
+                  render={() => (
+                    <ErrorBoundary>
+                      <Organizations />
+                    </ErrorBoundary>
+                  )}
+                />
+                <Route
+                  path="/emojis"
+                  render={() => (
+                    <ErrorBoundary>
+                      <Emojis />
+                    </ErrorBoundary>
+                  )}
+                />
+                <Route
+                  path="/"
+                  render={() => (
+                    <ErrorBoundary>
+                      <Home />
+                    </ErrorBoundary>
+                  )}
+                />
+              </Switch>
+            </Router>
+          </Body>
+        </ModalProvider>
       </Provider>
     </ThemeProvider>
   );

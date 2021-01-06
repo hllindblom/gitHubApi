@@ -1,5 +1,5 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
-import { getAllOrganizationsApi, getZenApi, getOctocatApi } from '../api/api';
+import { getAllOrganizationsApi, getZenApi, getOctocatApi, getEmojisApi } from '../api/api';
 import {
   ORGANIZATION_FETCH_REQUESTED,
   receiveAllOrganizations,
@@ -8,6 +8,9 @@ import {
   receiveZen,
   initFailed,
   receiveOctocat,
+  EMOJI_FETCH_REQUESTED,
+  receiveEmojis,
+  emojisFetchFailed,
 } from './actions';
 
 function* fetchOrganizationsSaga() {
@@ -22,6 +25,20 @@ function* fetchOrganizationsSaga() {
 
 function* watchFetchOrganizations() {
   yield takeLatest(ORGANIZATION_FETCH_REQUESTED, fetchOrganizationsSaga);
+}
+
+function* fetchEmojisSaga() {
+  try {
+    const emojiData = yield call(getEmojisApi);
+    yield put(receiveEmojis(emojiData));
+  } catch (e) {
+    yield put(emojisFetchFailed({ message: 'There was an error when fetching emojis :(' }));
+    console.log(e);
+  }
+}
+
+function* watchFetchEmojis() {
+  yield takeLatest(EMOJI_FETCH_REQUESTED, fetchEmojisSaga);
 }
 
 function* initSaga() {
@@ -42,5 +59,5 @@ function* watchInit() {
 }
 
 export default function* mySaga() {
-  yield all([watchFetchOrganizations(), watchInit()]);
+  yield all([watchFetchOrganizations(), watchFetchEmojis(), watchInit()]);
 }

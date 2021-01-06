@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from '@testing-library/react';
-import OrganizationTable from '../components/OrganizationTable';
+import Organizations from '../components/Organizations';
 import { renderWithProviders, renderWithProvidersWithStore, getStore, initialState } from '../helpers/testHelper';
 
 const mockData = [
@@ -21,7 +21,7 @@ const mockData = [
 describe('OrganizationTable', () => {
   test('it renders with mock data', () => {
     const { getByText, container } = renderWithProviders(
-      <OrganizationTable />,
+      <Organizations />,
       {
         state: {
           organizations: mockData,
@@ -42,7 +42,7 @@ describe('OrganizationTable', () => {
     const store = getStore()(initialState);
 
     renderWithProvidersWithStore(
-      <OrganizationTable />,
+      <Organizations />,
       store,
     );
 

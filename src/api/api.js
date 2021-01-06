@@ -9,7 +9,7 @@ const config = {
 };
 
 export const getAllOrganizationsApi = async () => {
-  const response = await fetch('https://api.github.com/organizations?callBack=getData', config);
+  const response = await fetch('https://api.github.com/organizations?callBack=getData&per_page=100', config);
 
   if (response.status >= 400) {
     throw new Error(response);
@@ -40,6 +40,18 @@ export const getOctocatApi = async () => {
   }
 
   const responseData = await response.text();
+
+  return responseData;
+};
+
+export const getEmojisApi = async () => {
+  const response = await fetch('https://api.github.com/emojis?callBack=getData', config);
+
+  if (response.status >= 400) {
+    throw new Error(response);
+  }
+
+  const responseData = await response.json();
 
   return responseData;
 };

@@ -31,9 +31,13 @@ export const renderWithProvidersWithStore = (ui, store) => render(<WithProviders
 
 export const initialState = {
   organizations: null,
+  emojis: null,
   zen: null,
   octocat: null,
   loading: true,
   loadingTable: true,
+  loadingEmoji: true,
   error: null,
+  errorTable: null,
+  errorEmoji: null,
 };
