@@ -1,4 +1,4 @@
-export const MockData = {
+export const EmojiMockData = {
   '+1': 'https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8',
   '-1': 'https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png?v8',
   100: 'https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8',
@@ -39,3 +39,18 @@ export const MockData = {
   antarctica: 'https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f6.png?v8',
   antigua_barbuda: 'https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1ec.png?v8',
 };
+
+export const OrganizationsMockData = [
+  {
+    avatar_url: 'https://avatar.test.com',
+    id: 1,
+    login: 'test_login',
+    url: 'https://test.api.com/test',
+  },
+  {
+    avatar_url: 'https://avatar2.test.com',
+    id: 2,
+    login: 'test_login2',
+    url: 'https://test2.api.com/test2',
+  },
+];

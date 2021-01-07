@@ -5,13 +5,6 @@ import { StyledTable, TableRow, SortIcon, PaginationWrapper, PaginationButton, I
 import columns from '../helpers/columns';
 
 const Table = ({ data, openModal }) => {
-  const defaultColumn = React.useMemo(
-    () => ({
-      width: 150,
-    }),
-    [],
-  );
-
   const {
     getTableProps,
     headerGroups,
@@ -29,7 +22,7 @@ const Table = ({ data, openModal }) => {
     state: { pageIndex, pageSize },
   } = useTable(
     {
-      columns, data, defaultColumn, initialState: { pageIndex: 0, pageSize: 20 },
+      columns, data, initialState: { pageIndex: 0, pageSize: 20 },
     },
     useSortBy,
     usePagination,

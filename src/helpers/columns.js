@@ -1,14 +1,18 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Img } from './styled';
+import styled from 'styled-components';
+
+const Logo = styled.img`
+    height: 1em;
+`;
 
 export default [
   {
     id: 'avatar',
     Header: '',
     accessor: 'avatar_url',
-    Cell: props => <Img src={props.value} />,
+    Cell: props => <Logo src={props.value} />,
     disableSortBy: true,
   },
   {

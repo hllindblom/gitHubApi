@@ -43,7 +43,7 @@ const Organizations = ({ organizations, loading, error, fetchAllOrganizations })
       {!loading && !error && (
         <>
           <H1>{`Oldest ${organizations.length} organizations`}</H1>
-          <ToolTip>Try out sorting by clicking on column header</ToolTip>
+          <ToolTip>Try out sorting by clicking on column header. Click row to see all data from the organization.</ToolTip>
           <OrganizationModal organizationData={organizationData} modalIsOpen={modalIsOpen} closeModal={closeModal} />
           <Table data={organizations} modalIsOpen={modalIsOpen} openModal={openModal} closeModal={closeModal} />
         </>

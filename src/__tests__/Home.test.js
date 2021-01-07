@@ -15,7 +15,7 @@ describe('Home', () => {
       },
     );
 
-    expect(getByText('Get super interesting data from GitHub API')).toBeInTheDocument();
+    expect(getByText('Test fetching data from GitHub API')).toBeInTheDocument();
     expect(getByText('Zen')).toBeInTheDocument();
     expect(getByText('Octocat')).toBeInTheDocument();
   });

@@ -5,7 +5,7 @@ import ZenOctocat from './ZenOctocat';
 const Home = () => (
   <>
     <H1 className="App-header">
-      Get super interesting data from GitHub API
+      Test fetching data from GitHub API
     </H1>
     <ZenWrapper>
       <ZenOctocat />

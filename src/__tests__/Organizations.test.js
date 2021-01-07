@@ -1,22 +1,8 @@
 import React from 'react';
 import { act } from '@testing-library/react';
 import Organizations from '../components/Organizations';
+import { OrganizationsMockData } from '../helpers/testMockData';
 import { renderWithProviders, renderWithProvidersWithStore, getStore, initialState } from '../helpers/testHelper';
-
-const mockData = [
-  {
-    avatar_url: 'https://avatar.test.com',
-    id: 1,
-    login: 'test_login',
-    url: 'https://test.api.com/test',
-  },
-  {
-    avatar_url: 'https://avatar2.test.com',
-    id: 2,
-    login: 'test_login2',
-    url: 'https://test2.api.com/test2',
-  },
-];
 
 describe('OrganizationTable', () => {
   test('it renders with mock data', () => {
@@ -24,13 +10,12 @@ describe('OrganizationTable', () => {
       <Organizations />,
       {
         state: {
-          organizations: mockData,
+          organizations: OrganizationsMockData,
         },
       },
     );
 
     expect(getByText('Oldest 2 organizations')).toBeInTheDocument();
-
     expect(container.querySelector('thead')).toBeInTheDocument();
     expect(container.querySelector('tbody')).toBeInTheDocument();
     expect(container.querySelectorAll('thead tr th')).toHaveLength(4);

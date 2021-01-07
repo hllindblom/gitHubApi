@@ -21,11 +21,10 @@ const Emojis = ({ emojis, loading, error, fetchEmojis }) => {
   const getRandomNumber = () => Math.floor(Math.random() * Math.floor(1799));
 
   const getRandomItems = () => {
-    const keys = Object.keys(emojis);
     const randomKeys = [];
 
     for (let i = 0; i < numberOfEmojis; i++) {
-      randomKeys.push(keys[getRandomNumber()]);
+      randomKeys.push(Object.keys(emojis)[getRandomNumber()]);
     }
 
     return randomKeys.map((key) => emojis[key]);

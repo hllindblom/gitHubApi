@@ -1,16 +1,16 @@
 import React from 'react';
 import { act, fireEvent, waitFor } from '@testing-library/react';
 import Emojis from '../components/Emojis';
-import { MockData } from '../helpers/emoji_data';
+import { EmojiMockData } from '../helpers/testMockData';
 import { renderWithProviders, renderWithProvidersWithStore, getStore, initialState } from '../helpers/testHelper';
 
-describe('OrganizationTable', () => {
+describe('Emojis', () => {
   test('it renders with mock data', () => {
     const { getByText, getAllByTestId } = renderWithProviders(
       <Emojis />,
       {
         state: {
-          emojis: MockData,
+          emojis: EmojiMockData,
         },
       },
     );
@@ -42,7 +42,7 @@ describe('OrganizationTable', () => {
       <Emojis />,
       {
         state: {
-          emojis: MockData,
+          emojis: EmojiMockData,
         },
       },
     );
@@ -63,7 +63,7 @@ describe('OrganizationTable', () => {
       <Emojis />,
       {
         state: {
-          emojis: MockData,
+          emojis: EmojiMockData,
         },
       },
     );
