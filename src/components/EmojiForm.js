@@ -20,6 +20,7 @@ const EmojiForm = ({ currentNumber, updateNumber }) => {
         onChange={e => setInput(e.target.value)}
         min="0"
         max="1788"
+        data-testid="emoji-input"
       />
       <Submit
         type="submit"
