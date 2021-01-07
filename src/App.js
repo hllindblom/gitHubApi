@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';

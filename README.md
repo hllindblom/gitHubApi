@@ -7,6 +7,6 @@ This app fetches and renders some data from GitHub's Rest Api (documented [here]
 ## How to work with the app
 
 The app is deployed to Azure with GitHub Actions pipeline, you can just check it out [here](https://githubapistorage.z6.web.core.windows.net/).
-If you want to run the code locally, just run `yarn install` and `yarn start` in the project directory, and the app will be opened in [http://localhost:3000](http://localhost:3000).
+If you want to run the code locally, just run `yarn install` and `yarn start` in the project directory, and the app will be opened in [http://localhost:3000](http://localhost:3000). To build production version, run `yarn build`.
 
 You can run tests with `yarn test`. The tests are also run in the GitHub Actions pipeline.
