@@ -2,7 +2,7 @@
 
 ## Background
 
-This app fetches and renders some data from GitHub's Rest Api (documented [here](https://docs.github.com/en/free-pro-team@latest/rest)). It was initiated with create-react-app, and it uses e.g. react-table, styled-react-modal and styled-components. It is meant to be just a short test, but I wanted to try out how to really use some stuff that I have seen / been using a little bit in already existing projects.
+This app fetches and renders some data from GitHub's Rest Api (api is documented [here](https://docs.github.com/en/free-pro-team@latest/rest)). It was initiated with create-react-app, and it uses e.g. react-table, styled-react-modal and styled-components. It is meant to be just a short test, but I wanted to try out how to really use some stuff that I have seen / been using a little bit in already existing projects.
 
 ## How to work with the app
 
